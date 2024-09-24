@@ -29,3 +29,9 @@ The navigation diagram shows the process of a user
 
 ### Screen Layouts
 Screen-Start: 
+
+
+## Class Diagram
+<img src="classDiagram.jpg?raw=true" width="700">
+
+Our game will be comprised of 4 main classes, the database, the title screen, the game logic, and the overall gameplay. The Databse class reads data from the csv file and separates it into lists by decade in accordance with the game. The TitleScreen class prints the initial starting page, instructions, and the decade and mode menus. It also returns the decade number and mode that will be used in other classes. The Game class inherits from Database and TitleScreen and essentially matches the correct answer for both modes as well as generates random incorrect options for each question. The Play class inherits from Database, TitleScreen, and Game and organizes the whole game. It also establishes the point system and ends the game when the user gets three questions incorrect.
