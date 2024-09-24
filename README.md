@@ -25,7 +25,7 @@ The project will primarily use Python for programming the game. We will use SQL 
 ### Navigation Diagram
 The navigation diagram shows the process of a user 
 
-<img src="Movie Trivia Navigation Diagram.png?raw=true" width="700">
+<img src="navigationDiagram.jpg?raw=true" width="700">
 
 ### Screen Layouts
 Screen-Start: 
