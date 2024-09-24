@@ -6,6 +6,7 @@ class Play:
     def __init__(self):
        self.data = Database()
        self.title = TitleScreen()
+       self.play = Game()
 
     # Matches the decade number in the parameter to one of the decades lists
     def matchDecade(self, decade):
@@ -32,21 +33,39 @@ class Play:
 
     # Keeps track of number of points earned and incorrect answers
     def pointSystem(self):
-        # Create Game object
-        play = Game()
-        category = self.title.printCategory()
-        decade = self.title.printDecades()
 
-        # Keep giving questions depending on category on decade until user gets 3 incorrect
-        while play.incorrect < 3:
-            if category == 1:
-                play.movieToQuote(self.matchDecade(decade))
-                play.printMovieToQuote()
+        self.title.printTitleScreen()
+        mode = self.title.mode
+        decade = self.title.decadeNum
+
+        # Keep giving questions depending on mode on decade until user gets 3 incorrect
+        while self.play.incorrect < 3:
+            if mode == 1:
+                self.play.movieToQuote(self.matchDecade(decade))
+                self.play.printMovieToQuote()
             else:
-                play.quoteToMovie(self.matchDecade(decade))
-                play.printQuoteToMovie()
-            play.checkAnswer()
+                self.play.quoteToMovie(self.matchDecade(decade))
+                self.play.printQuoteToMovie()
+            
+            isQuit = self.play.checkAnswer()
+            if isQuit == 'q':
+                self.printPoints()
             # Print out number of incorrect answers so far
-            print(f"Incorrect Answers: {play.incorrect}\n")
+            print(f"Incorrect Answers: {self.play.incorrect}\n")
         print("3 Incorrect. Game Over!")
-        print("Points Earned:", play.points)
+        self.printPoints()
+        
+    def printPoints(self):
+        print("\n------------------ Total Points ------------------")
+        print("Points Earned:", self.play.points)
+        userQuit = input("Press 'q' to quit or any key to play again\n")
+        
+        if userQuit == 'q':
+            quit()
+        else:
+            self.play.incorrect = 0
+            self.pointSystem()
+
+
+play1 = Play()
+play1.pointSystem()

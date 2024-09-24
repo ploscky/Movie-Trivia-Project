@@ -78,20 +78,13 @@ class Game:
 
     # Compare user input to index of the answer
     def checkAnswer(self):
-        guess = int(input("\nEnter your guess as a number 1-4: "))
-        if guess == self.correctIndex + 1:
-            print("correct!\n", "\n--------------------------------------------------------\n")
-            self.points += 1
-        else:
-            print ("incorrect\n", "\n--------------------------------------------------------\n")
-            self.incorrect += 1
-
-# data = Database()
-# list = data.createDataList()
-# data.separateList(list)
-
-# for i in range(20):
-#     play = Game()
-#     play.movieToQuote(data.aughts)
-#     play.printMovieToQuote()
-#     play.checkAnswer()
+        guess = input("\nEnter your guess as a number 1-4: ")
+            
+        if guess.isdigit(): 
+            if int(guess) == self.correctIndex + 1:
+                print("correct!\n", "\n--------------------------------------------------------\n")
+                self.points += 1
+            else:
+                print ("incorrect\n", "\n--------------------------------------------------------\n")
+                self.incorrect += 1
+        return guess
