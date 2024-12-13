@@ -1,4 +1,4 @@
-# Trivia TBD
+# Movie Trivia Project
  
  Authors: [Nada Salib](https://github.com/nadasalib), [Selina Wu](https://github.com/ploscky)
 
@@ -9,9 +9,6 @@ The development of a movie trivia project is compelling because of the opportuni
 
 ### Languages, Tools, and Technologies
 The project will primarily use Python for programming the game. We will use SQL for database management and a csv file for the movie data set. Beyond that, GitHub and Visual Studio Code will be used to create this program.
-
-### Inputs and Outputs
-...
  
 ### Features
 * Categories: User will be given the choice between guessing which movie a quote is from or which character said a quote from one particular movie. For the first category, there are sub-categories for genre.
@@ -20,15 +17,10 @@ The project will primarily use Python for programming the game. We will use SQL 
 * Graphical User Interface:
 
 
-## User Interface Specification
-
 ### Navigation Diagram
 The navigation diagram shows the process of a user 
 
 <img src="navigationDiagram.jpg?raw=true" width="700">
-
-### Screen Layouts
-Screen-Start: 
 
 
 ## Class Diagram
